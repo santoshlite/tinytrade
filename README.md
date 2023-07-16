@@ -1,1 +1,1 @@
-# tinystock
+# tinytrade
