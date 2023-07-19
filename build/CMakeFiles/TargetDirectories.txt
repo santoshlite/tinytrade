@@ -1,3 +1,0 @@
-/Users/santosh/Desktop/code/projects/tinytrade/build/CMakeFiles/main.dir
-/Users/santosh/Desktop/code/projects/tinytrade/build/CMakeFiles/edit_cache.dir
-/Users/santosh/Desktop/code/projects/tinytrade/build/CMakeFiles/rebuild_cache.dir
