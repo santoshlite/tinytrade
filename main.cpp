@@ -5,7 +5,7 @@
 #include <thread>
 
 int main() {
-    std::cout << "Welcome to tinytrade!";
+    std::cout << "Welcome to tinytrade!\n";
     std::cout << "A simple stock exchange simulator.";
     return 0;
 }
