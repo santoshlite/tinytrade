@@ -6,7 +6,7 @@
 
 int main() {
     std::cout << "Welcome to tinytrade!\n";
-    std::cout << "A simple stock exchange simulator.";
+    std::cout << "A dark pool exchange.\n";
     return 0;
 }
 
