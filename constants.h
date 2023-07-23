@@ -1,5 +1,5 @@
 #if !defined(CONSTANTS)
-#define CONSTANTS 1
+#define CONSTANTS
 
 const int MAX_TRADE_SIZE = 10'000'000;
 const int MIN_TRADE_SIZE = 1000;
