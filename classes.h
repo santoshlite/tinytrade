@@ -6,6 +6,7 @@
 
 class Order {
 public:
+    long order_id;
     long customer_id;
     long stock_id;
     char order_type; // B, S, or C
@@ -25,6 +26,16 @@ class OrderBook {
         std::queue<Order> buy_limit_orders;
         std::queue<Order> sell_limit_orders;
         std::queue<Order> cancel_limit_orders;
+};
+
+class OrderResult {  
+    public:
+        long order_id;
+        long customer_id;
+        time_t timestamp;
+        int status_code;
+        std::string status_message;
+        long num_shares_filled;
 };
 
 #endif
