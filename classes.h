@@ -15,6 +15,8 @@ public:
     int num_shares;
     bool partial_fill_allowed;
     int expire_time; // in minutes
+    time_t timestamp;
+    int checksum;
 };
 
 // USE LOCK FREE QUEUE later
