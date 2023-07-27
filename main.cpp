@@ -9,13 +9,8 @@ int main() {
     std::cout << "Welcome to tinytrade!\n";
     std::cout << "A dark pool exchange.\n";
 
-    int a = num();
-    printf("a = %d\n", a);
-    /*
-    for (int i = 0; i < 100; i++) {
-        cout << "order # " + std::to_string(i) << "\n";
-    }
-    */
+    string a = gen_uuid();
+    cout << "a = " << a << endl;
     return 0;
 }
 
