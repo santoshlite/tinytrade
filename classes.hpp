@@ -1,6 +1,8 @@
 #include <iostream>
-#include <queue>
 #include <deque>
+#include <queue>
+
+using namespace std;
 
 #ifndef CLASSES
 #define CLASSES
@@ -44,8 +46,8 @@ class sell_comparator {
 class OrderBook {  
     public:
         long stock_id;
-        std::queue<Order> buy_market_orders;
-        std::queue<Order> sell_market_orders;
+        queue<Order> buy_market_orders;
+        queue<Order> sell_market_orders;
         priority_queue<Order, deque<Order>, buy_comparator> buy_limit_orders;
         priority_queue<Order, deque<Order>, sell_comparator> sell_limit_orders;
         std::queue<Order> cancel_limit_orders;
