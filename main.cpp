@@ -7,10 +7,9 @@
 
 int main() {
     std::cout << "Welcome to tinytrade!\n";
-    std::cout << "A dark pool exchange.\n";
 
     string a = gen_uuid();
-    cout << "a = " << a << endl;
+    cout << "order id: " << a << endl;
     return 0;
 }
 
