@@ -14,7 +14,7 @@ Order build_an_order(string message){
   char order_class_options[3] = {'M', 'L'};
   bool partial_fill_allowed_options[2] = {true, false};
 
-  order.order_id = 1;
+  order.order_id = gen_uuid();
   order.customer_id = 1;
   order.stock_id = 1;
   order.order_type = 'B';

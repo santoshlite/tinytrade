@@ -1,6 +1,7 @@
 #include <iostream>
 #include <deque>
 #include <queue>
+#include <string>
 
 using namespace std;
 
@@ -9,7 +10,7 @@ using namespace std;
 
 class Order {
 public:
-    long order_id;
+    string order_id;
     long customer_id;
     long stock_id;
     char order_type; // B, S, or C

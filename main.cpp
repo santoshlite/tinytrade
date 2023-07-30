@@ -7,9 +7,6 @@
 
 int main() {
     std::cout << "Welcome to tinytrade!\n";
-
-    string a = gen_uuid();
-    cout << "order id: " << a << endl;
     return 0;
 }
 
