@@ -8,22 +8,22 @@
 using namespace std;
 namespace boost_uuid = boost::uuids;
 
-Order build_an_order(string message){
-  Order order;
+string build_an_order(){
+  string order = "";
   char order_type_options[3] = {'B', 'S', 'C'};
   char order_class_options[3] = {'M', 'L'};
   bool partial_fill_allowed_options[2] = {true, false};
 
-  order.order_id = gen_uuid();
-  order.customer_id = 1;
-  order.stock_id = 1;
-  order.order_type = 'B';
-  order.order_class = 'M';
-  order.unit_price = 2.0;
-  order.num_shares = 1;
-  order.partial_fill_allowed = true;
-  order.expire_time = 1;
-  order.timestamp = 1;
+  string order_id = gen_uuid();
+  int customer_id = 1;
+  int stock_id = 1;
+  char order_type = 'B';
+  char order_class = 'M';
+  int unit_price = 2.0;
+  int num_shares = 1;
+  bool partial_fill_allowed = true;
+  int expire_time = 1;
+  time_t timestamp = 1;
   return order;
 }
 
