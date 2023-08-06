@@ -8,7 +8,8 @@
 int main() {
     std::cout << "Welcome to tinytrade!\n";
     for(int i = 0; i < 10; i++){
-        std::cout << build_an_order() << "\n";
+        string order = build_an_order();
+        std::cout << order << "\n";
     }
     return 0;
 }
