@@ -8,6 +8,7 @@
 using namespace std;
 namespace boost_uuid = boost::uuids;
 
+// use fix protocol instead
 string build_an_order(){
   string order = "";
   char order_type_options[3] = {'B', 'S', 'C'};
