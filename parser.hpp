@@ -5,5 +5,6 @@
 Order parse(char *message){
     Order order;
     strtok(message, "|");
+    
 }
 

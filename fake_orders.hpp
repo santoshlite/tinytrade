@@ -12,14 +12,12 @@ namespace boost_uuid = boost::uuids;
 string build_an_order(){
   string order = "";
   char order_type_options[3] = {'B', 'S', 'C'};
-  char order_class_options[3] = {'M', 'L'};
   bool partial_fill_allowed_options[2] = {true, false};
-
   string order_id = gen_uuid();
+  char order_class_options = 'L';
   int customer_id = 1;
   int stock_id = 1;
   char order_type = 'B';
-  char order_class = 'M';
   int unit_price = 2.0;
   int num_shares = 1;
   bool partial_fill_allowed = true;

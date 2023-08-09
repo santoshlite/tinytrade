@@ -14,7 +14,6 @@ public:
     long customer_id;
     long stock_id;
     char order_type; // B, S, or C
-    char order_class; // L
     double unit_price;
     int num_shares;
     bool partial_fill_allowed;
@@ -43,7 +42,7 @@ class sell_comparator {
       }
 };
 
-// USE LOCK FREE QUEUE later
+// USE MUTEX for the queues
 class OrderBook {  
     public:
         long stock_id;
