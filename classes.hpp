@@ -14,7 +14,7 @@ public:
     long customer_id;
     long stock_id;
     char order_type; // B, S, or C
-    char order_class; // M or L
+    char order_class; // L
     double unit_price;
     int num_shares;
     bool partial_fill_allowed;
@@ -47,8 +47,6 @@ class sell_comparator {
 class OrderBook {  
     public:
         long stock_id;
-        queue<Order> buy_market_orders;
-        queue<Order> sell_market_orders;
         priority_queue<Order, deque<Order>, buy_comparator> buy_limit_orders;
         priority_queue<Order, deque<Order>, sell_comparator> sell_limit_orders;
         std::queue<Order> cancel_limit_orders;
