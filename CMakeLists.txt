@@ -13,5 +13,7 @@ add_executable(client client/main.cpp)
 # Find and link the Boost library
 find_package(Boost REQUIRED)
 
+target_link_libraries(client libprotobuf)
+
 target_include_directories(main PRIVATE ${Boost_INCLUDE_DIRS})
 target_include_directories(client PRIVATE ${Boost_INCLUDE_DIRS})

@@ -2,6 +2,7 @@
 build
 main.dSYM
 *
+!/*
 !*.cpp
 !*.hpp
 !Makefile
