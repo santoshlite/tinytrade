@@ -6,3 +6,6 @@ main.dSYM
 !*.cpp
 !*.hpp
 !Makefile
+!*.proto
+!*.h
+!*.cc
