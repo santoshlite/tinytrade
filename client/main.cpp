@@ -1,15 +1,15 @@
 #include <iostream>
-#include <boost/beast/core.hpp>
-#include <boost/beast/websocket.hpp>
 #include <string>
 #include <thread>
 #include "fake_orders.hpp"
-#include "order.pb.h"
+#include "build/order.pb.h"
 
 int main() {
-    std::cout << "Welcome to tinytrade client!\n";
     tutorial::Person p;
+    p.set_name("jolly");
+    std::cout << "Welcome to tinytrade client!\n";
     for(int i = 0; i < 10; i++){
+        std::cout << p.name();
         std::cout << gen_uuid();
     }
     return 0;
