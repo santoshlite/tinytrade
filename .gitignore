@@ -4,7 +4,7 @@ main.dSYM
 *
 !/*
 !*.cpp
-!*.txt
+!CMakeLists.txt
 !*.hpp
 !/Makefile
 !*.proto
