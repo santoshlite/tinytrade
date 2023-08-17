@@ -5,7 +5,7 @@
 #include <thread>
 
 int main() {
-    std::cout << "Welcome to tinytrade!\n";
+    std::cout << "Welcome to tinytrade!!\n";
     return 0;
 }
 
