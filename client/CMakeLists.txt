@@ -11,7 +11,7 @@ set(Protobuf_INCLUDE_DIRS /usr/local/include)
 include_directories(${Protobuf_INCLUDE_DIRS})
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 protobuf_generate_cpp(PROTO_SRCS PROTO_HDRS ../protobuf/order.proto)
-
+ 
 # Add the executable target 
 add_executable(client main.cpp ${PROTO_SRCS} ${PROTO_HDRS})
 

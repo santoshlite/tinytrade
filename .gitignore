@@ -10,3 +10,4 @@ main.dSYM
 !*.proto
 !*.h
 !*.cc
+!*.sh
