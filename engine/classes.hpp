@@ -1,12 +1,11 @@
+#pragma once
+
 #include <iostream>
 #include <deque>
 #include <queue>
 #include <string>
 
 using namespace std;
-
-#ifndef CLASSES
-#define CLASSES
 
 class Order {
 public:
@@ -60,5 +59,3 @@ class OrderResult {
         std::string status_message;
         long num_shares_filled;
 };
-
-#endif
