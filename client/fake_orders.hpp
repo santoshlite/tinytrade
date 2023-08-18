@@ -1,30 +1,28 @@
+#pragma once
+
 #include <iostream>
 #include <random>
 #include <boost/uuid/uuid_generators.hpp>
 #include <boost/uuid/uuid_io.hpp>
 #include <boost/lexical_cast.hpp>
-using namespace std;
-namespace boost_uuid = boost::uuids;
+#include <random>
+#include "orders.pb.h"
 
-// use fix protocol instead
-string build_an_order(){
-  string order = "";
-  char order_type_options[3] = {'B', 'S', 'C'};
-  bool partial_fill_allowed_options[2] = {true, false};
-  char order_class_options = 'L';
-  int customer_id = 1;
-  int stock_id = 1;
-  char order_type = 'B';
-  int unit_price = 2.0;
-  int num_shares = 1;
-  bool partial_fill_allowed = true;
-  int expire_time = 1;
-  time_t timestamp = 1;
-  return order;
+std::string gen_uuid(){
+    std::string uuid_str = boost::lexical_cast<std::string>(boost::uuids::random_generator()());
+    return uuid_str;
 }
 
-
-string gen_uuid(){
-    string uuid_str = boost::lexical_cast<std::string>(boost::uuids::random_generator()());
-    return uuid_str;
+order_types::LimitOrder build_an_order(){
+  std::random_device rd;
+  std::uniform_int_distribution<int> dist(10000, 10000000);
+  order_types::LimitOrder order;
+  order.set_order_id(gen_uuid());
+  order.set_user_id(1232);
+  order.set_stock_id(999999999); // fixed
+  order.set_order_type(order_types::OrderType::BUY);
+  order.set_num_shares(10000);
+  order.set_partial_fill(true);
+  order.set_expire_time(1000);
+  return order;
 }
