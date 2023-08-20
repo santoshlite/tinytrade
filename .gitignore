@@ -5,6 +5,7 @@ main.dSYM
 *
 !/*
 !*.cpp
+!*.csv
 !CMakeLists.txt
 !*.hpp
 !/Makefile
