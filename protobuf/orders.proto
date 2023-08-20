@@ -1,24 +1,13 @@
 syntax = "proto2";
 
-package order_types;
+package orders;
 
-message LimitOrder {
-  required string order_id = 1;
+message Message {
+  required uint32 order_id = 1;
   required uint32 user_id = 2;
   required uint32 stock_id = 3; 
-  required OrderType order_type = 4;
-  required double unit_price = 5;
+  required uint32 event_type = 4;
+  required uint32 unit_price = 5;
   required uint32 num_shares = 6;
-  required bool partial_fill = 7;
-  required uint32 expire_time = 8; //in min
-}
-
-enum OrderType {
-  BUY = 0;
-  SELL = 1;
-}
-
-message CancelOrder {
-  required string order_id = 1;
-  required uint32 user_id = 2;
+  required int32  order_type = 7;
 }

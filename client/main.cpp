@@ -1,22 +1,44 @@
 #include <iostream>
+#include <vector>
 #include <string>
-#include <thread>
-#include "fake_orders.hpp"
+#include <fstream>
+#include <sstream>
+#include <ios>
+#include "send.hpp"
 #include "orders.pb.h"
 
 int main() {
     std::cout << "Welcome to tinytrade client!\n";
-    for(int i = 0; i < 10; i++){
-        order_types::LimitOrder dummy_order = build_an_order();
-        std::cout << "== ORDER DETAILS =="<<"\n";
-        std::cout << "ORDER ID: " << dummy_order.order_id() << "\n";
-        std::cout << "USER ID: " << dummy_order.user_id() << "\n";
-        std::cout << "ORDER TYPE: " << dummy_order.order_type() << "\n";
-        std::cout << "UNIT PRICE: " << dummy_order.unit_price() << "\n";
-        std::cout << "NUM SHARES: " << dummy_order.num_shares() << "\n";
-        std::cout << "PARTIAL FILLS: " << dummy_order.partial_fill() << "\n";
-        std::cout << "EXPIRE TIME: " << dummy_order.expire_time() << "\n";
+    std::fstream fin;
+
+    fin.open("fake_data.csv", std::ios::in);
+
+    std::vector<std::vector<std::string>> rows;
+    std::vector<std::string> row;
+    std::string line, word, temp;
+    while (fin >> temp) {
+        row.clear();
+        getline(fin, line);
+        std::stringstream s(line);
+        while (getline(s, word, ',')){
+            row.push_back(word);
+        }
+
+        orders::Message m;
+        m.set_order_id(stoi(row[0]));
+        //m.set_user_id(row[1]);
+        //m.order_id = row[0];
+        //m.user_id = row[1];
+        //m.stock_id = row[2];
+        //m.event_type = row[3];
+        //m.unit_price = row[4];
+        //m.num_shares = row[5];
+        //m.order_type = row[6];
+
+        send(m);
+
     }
+
     return 0;
 }
 
