@@ -6,6 +6,9 @@
 
 int main() {
     std::cout << "Welcome to tinytrade!!\n";
+
+    // gRPC server logic
+
     return 0;
 }
 

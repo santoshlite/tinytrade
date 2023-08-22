@@ -18,9 +18,10 @@ void send(const orders::Message* m){
         std::cout << "== MESSAGE DETAILS =="<<std::endl;
         std::cout << m->DebugString() << "\n";
         if(m->SerializeToString(&serialized)){
-                std::cout << "Ready" << std::endl;
-                std::cout << checksum(serialized) << std::endl;
+                std::cout << "checksum: " << checksum(serialized) << std::endl;
         } else{
                 std::cerr << "Serialization failed" << std::endl;
         }
+        
+        // gRPC client logic
 }
