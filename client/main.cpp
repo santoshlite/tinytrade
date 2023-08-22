@@ -42,26 +42,7 @@ int main() {
             send(arena_message);
         }
     }
-        /*
-        row.clear();
-        getline(fin, line);
-        std::stringstream s(line);
-        while (getline(s, word, ',')){
-            row.push_back(word);
-        }
-        std::cout << "ROW: " << row[0] << std::endl;
-        orders::Message m;
-        m.set_order_id(stoi(row[0]));
-        m.set_user_id(stoi(row[1]));
-        m.set_order_id(stoi(row[2]));
-        m.set_user_id(stoi(row[3]));
-        m.set_stock_id(stoi(row[4]));
-        m.set_event_type(stoi(row[5]));
-        m.set_unit_price(stoi(row[6]));
-        m.set_num_shares(stoi(row[7]));
-        m.set_order_type(stoi(row[8]));
-        send(m);
-        */
+
     fin.close();
     return 0;
 }
