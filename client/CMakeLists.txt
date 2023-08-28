@@ -6,8 +6,6 @@ set(CMAKE_CXX_STANDARD 20)
 
 include(../build/common.cmake)
 
-set(Protobuf_INCLUDE_DIRS /Users/santosh/.local/include)
-include_directories(${Protobuf_INCLUDE_DIRS})
 get_filename_component(rg_proto "../protobuf/schema.proto" ABSOLUTE)
 get_filename_component(rg_proto_path "${rg_proto}" PATH)
 
