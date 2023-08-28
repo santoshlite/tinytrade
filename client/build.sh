@@ -1,9 +1,8 @@
 #!/bin/bash
 
-cmake -S . -B ../build/client
-cmake --build ../build/client
+export MY_INSTALL_DIR=$HOME/.local
+cmake -S . -B ../build/client -DCMAKE_PREFIX_PATH=$MY_INSTALL_DIR
 cd ../build/client
+make -j 4
 ./client
-cd ..
-cd ..
 

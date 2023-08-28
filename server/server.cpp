@@ -1,8 +1,7 @@
 #include <iostream>
-#include <boost/beast/core.hpp>
-#include <boost/beast/websocket.hpp>
 #include <string>
-#include <thread>
+#include <google/protobuf/arena.h>
+#include "schema.pb.h"
 
 int main() {
     std::cout << "Welcome to tinytrade!!\n";

@@ -1,8 +1,9 @@
 #include <iostream>
 #include <string>
-#include "orders.pb.h"
+#include "schema.pb.h"
 
-void send(orders::Message m);
+
+void send(schema::ClientOrder m);
 unsigned int checksum(const std::string& msg);
 
 unsigned int checksum(const std::string& msg){
@@ -13,7 +14,7 @@ unsigned int checksum(const std::string& msg){
         return result;
 }
 
-void send(const orders::Message* m){
+void send(const schema::ClientOrder* m){
         std::string serialized;
         std::cout << "== MESSAGE DETAILS =="<<std::endl;
         std::cout << m->DebugString() << "\n";

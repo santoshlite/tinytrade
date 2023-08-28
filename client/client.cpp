@@ -6,8 +6,8 @@
 #include <filesystem>
 #include <ios>
 #include <google/protobuf/arena.h>
+#include "schema.pb.h"
 #include "send.hpp"
-#include "orders.pb.h"
 
 int main() {
     std::cout << "Welcome to tinytrade client!\n";
@@ -20,6 +20,7 @@ int main() {
         std::cerr << "Error opening file." << std::endl;
     }
     
+
     google::protobuf::Arena arena;
     std::vector<std::string> row;
     std::string line, word;
@@ -30,7 +31,8 @@ int main() {
         while(getline(iss, word, ',')){
             row.push_back(word);
         }
-        orders::Message* arena_message = google::protobuf::Arena::CreateMessage<orders::Message>(&arena);
+    
+        schema::ClientOrder* arena_message = google::protobuf::Arena::CreateMessage<schema::ClientOrder>(&arena);
         arena_message->set_order_id(static_cast<uint32_t>(std::stoul(row[0])));
         arena_message->set_user_id(static_cast<uint32_t>(std::stoul(row[1])));
         arena_message->set_stock_id(static_cast<uint32_t>(std::stoul(row[2])));
@@ -41,6 +43,7 @@ int main() {
         if(arena_message->IsInitialized()){
             send(arena_message);
         }
+
     }
 
     fin.close();

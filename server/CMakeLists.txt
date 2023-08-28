@@ -1,13 +1,12 @@
 cmake_minimum_required(VERSION 3.5)
-project(client)
+project(server)
 
 # Set the C++20 standard for the entire project
 set(CMAKE_CXX_STANDARD 20)
 
 include(../build/common.cmake)
 
-set(Protobuf_INCLUDE_DIRS /Users/santosh/.local/include)
-include_directories(${Protobuf_INCLUDE_DIRS})
+target_include_directories(/Users/santosh/.local/include)
 get_filename_component(rg_proto "../protobuf/schema.proto" ABSOLUTE)
 get_filename_component(rg_proto_path "${rg_proto}" PATH)
 
@@ -40,9 +39,9 @@ target_link_libraries(rg_grpc_proto
   ${_GRPC_GRPCPP}
   ${_PROTOBUF_LIBPROTOBUF})
 
-# Targets route_guide_(client|server)
+# Targets route_guide_(server|server)
 foreach(_target
-  client)
+  server)
   add_executable(${_target}
     "${_target}.cpp")
   target_link_libraries(${_target}
