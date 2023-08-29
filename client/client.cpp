@@ -20,7 +20,6 @@ int main() {
         std::cerr << "Error opening file." << std::endl;
     }
     
-
     google::protobuf::Arena arena;
     std::vector<std::string> row;
     std::string line, word;
@@ -43,7 +42,6 @@ int main() {
         if(arena_message->IsInitialized()){
             send(arena_message);
         }
-
     }
 
     fin.close();
