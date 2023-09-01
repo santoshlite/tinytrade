@@ -40,8 +40,4 @@ void send(const schema::ClientOrder* order){
         }
 
         grpc::CreateChannel("localhost:50051", grpc::InsecureChannelCredentials());
-
-
-        
-        // gRPC client logic
 }
