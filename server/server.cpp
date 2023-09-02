@@ -42,8 +42,8 @@ void RunServer() {
 };
 
 int main() {
-    std::cout << "Welcome to tinytrade!!\n";
-    RunServer();
+    std::cout << "Welcome to tinytrade!\n";
+    RunServer(); // start the server here
     return 0;
 }
 
