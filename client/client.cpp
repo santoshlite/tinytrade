@@ -17,7 +17,7 @@ int main() {
     fin.open("../../client/fake_data.csv", std::ios::in);
 
     if (!fin.is_open()) {
-        std::cerr << "Error opening file." << std::endl;
+        std::cerr << "Error opening the file." << std::endl;
     }
     
     google::protobuf::Arena arena;
